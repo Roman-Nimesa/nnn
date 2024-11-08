@@ -1,0 +1,95 @@
+/* Основные стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+/* Фон со звёздами */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent 5%) 5px 5px,
+        radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 5%) 15px 15px,
+        radial-gradient(circle, rgba(255, 255, 255, 0.7), transparent 5%) 25px 25px,
+        radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 5%) 35px 35px;
+    background-color: #000000;
+    background-size: 50px 50px;
+    animation: starTwinkle 5s infinite alternate;
+}
+
+/* Анимация мерцания звёзд */
+@keyframes starTwinkle {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    padding: 30px;
+    background-color: rgba(10, 10, 10, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+
+.planets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.planet {
+    background-color: #1b1b1b;
+    padding: 15px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+.planet:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+    background-color: #333333;
+}
+
+/* Анимация появления элементов */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container, .planet {
+    animation: fadeIn 1s ease-out;
+}
